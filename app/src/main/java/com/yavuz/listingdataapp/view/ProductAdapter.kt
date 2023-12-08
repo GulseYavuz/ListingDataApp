@@ -19,15 +19,6 @@ class ProductAdapter(private var products: List<ProductResponse>) :
         return ViewHolder(binding)
     }
 
-/*    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
-            ProductViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(
-            R.layout.item_product,
-            parent, false
-        )
-        return ProductViewHolder(itemView)
-    }*/
-
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ProductAdapter.ViewHolder, position: Int) {
         val data = products[position]
@@ -40,16 +31,10 @@ class ProductAdapter(private var products: List<ProductResponse>) :
             .load(firstImageUrl)
             .placeholder(R.drawable.placeholder_image)
             .error(R.drawable.error_image)
-            .into(holder.binding.productImageId)    }
+            .into(holder.binding.productImageId)
+    }
 
     override fun getItemCount(): Int {
         return products.size
     }
-
-/*    class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val descriptionProduct: TextView = itemView.findViewById(R.id.descriptionId)
-        val imageProduct: ImageView = itemView.findViewById(R.id.productImageId)
-        val titleProduct: TextView = itemView.findViewById(R.id.titleId)
-
-    }*/
 }

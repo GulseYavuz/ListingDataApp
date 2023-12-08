@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity() {
                     retrofit.getAllProduct()
                 }
 
-                // Sonucu bekleyin ve ardından işleyin
                 val response = deferredResponse.await()
                 if (response.isSuccessful) {
                     launch(Dispatchers.Main) {
@@ -66,52 +65,5 @@ class MainActivity : AppCompatActivity() {
                 Log.e("NetworkError", "Bir hata oluştu: ${e.message}")
             }
         }
-
-
-            /*        lifecycleScope.launch {
-            val response = retrofit.getAllProduct()
-
-            if (response.isSuccessful) {
-                launch(Dispatchers.Main) {
-                    if (!response.body().isNullOrEmpty()) {
-                        val recyclerAdapter = response.body()?.let { ProductAdapter(it) }
-                        binding.idRVProducts.adapter = recyclerAdapter
-                    }
-                }
-            }
-            else{
-                Log.e("NetworkError", "Hata: ${response.code()} - ${response.message()}")
-                return@launch
-            }
-    }*/
-
-            //   val productApi = retrofit.create(ProductApi::class.java)
-            // val call: Call<ArrayList<Product>?> = productApi.getAllProduct()
-
-            /*        call!!.enqueue(object : Callback<ArrayList<Product>?> {
-            override fun onResponse(
-                call: Call<ArrayList<Product>?>,
-                response: Response<ArrayList<Product>?>
-
-            ) {
-                if (response.isSuccessful) {
-                    binding.idPBLoading.visibility = View.GONE
-                    product = response.body()!!
-                }
-
-                // on below line we are initializing our adapter.
-                productAdapter = ProductAdapter(product)
-
-                // on below line we are setting adapter to recycler view.
-                binding.idRVProducts.adapter = productAdapter
-            }
-
-            override fun onFailure(call: Call<ArrayList<Product>?>, t: Throwable) {
-                // displaying an error message in toast
-                Toast.makeText(this@MainActivity, "Fail to get the data..", Toast.LENGTH_SHORT)
-                    .show()
-            }
-        })*/
-
-        }
     }
+}

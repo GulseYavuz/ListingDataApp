@@ -1,6 +1,5 @@
 package com.yavuz.listingdataapp.network
 
-import com.yavuz.listingdataapp.model.Product
 import com.yavuz.listingdataapp.model.ProductResponse
 import retrofit2.Response
 import retrofit2.http.GET
