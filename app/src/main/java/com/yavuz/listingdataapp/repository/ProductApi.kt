@@ -1,4 +1,4 @@
-package com.yavuz.listingdataapp.network
+package com.yavuz.listingdataapp.repository
 
 import com.yavuz.listingdataapp.model.ProductResponse
 import retrofit2.Response

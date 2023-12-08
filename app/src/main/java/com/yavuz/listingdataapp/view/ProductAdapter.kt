@@ -24,7 +24,6 @@ class ProductAdapter(private var products: List<ProductResponse>) :
         val data = products[position]
         val firstImageUrl = data.images?.firstOrNull()
 
-
         holder.binding.titleId.text = data.title
         holder.binding.descriptionId.text = data.description
         Glide.with(holder.itemView.context)
